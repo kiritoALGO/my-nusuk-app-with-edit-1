@@ -1,0 +1,28 @@
+<!-- templates/create_profile_and_tasreh.html -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إنشاء ملف تعريف وتصريح</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_profile_and_tasreh.css' %}">
+    <style>
+        body {
+            direction: rtl;
+        }
+        .container {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>إنشاء ملف تعريف وتصريح</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">إرسال</button>
+        </form>
+    </div>
+</body>
+</html>

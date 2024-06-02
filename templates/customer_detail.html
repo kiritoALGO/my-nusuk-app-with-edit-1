@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/card_detail_styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Customer Profile</h1>
+        <div class="card">
+            <h2>{{ customer.name }}</h2>
+            <div class="details">
+                <div class="field-container">
+                    <p class="field"><label for="arabic-name">Arabic Name:</label></p>
+                    <p class="field-value">{{ customer.arabicName }}</p>
+                    <p class="field"><label for="visa-id">Visa ID:</label></p>
+                    <p class="field-value">{{ customer.visaId }}</p>
+                    <p class="field"><label for="border-number">Border Number:</label></p>
+                    <p class="field-value">{{ customer.borderNumber }}</p>
+                    <p class="field"><label for="nationality">Nationality:</label></p>
+                    <p class="field-value">{{ customer.nationality }}</p>
+                    <p class="field"><label for="arabic-nationality">Arabic Nationality:</label></p>
+                    <p class="field-value">{{ customer.arabicNationality }}</p>
+                    <p class="field"><label for="gender">Gender:</label></p>
+                    <p class="field-value">{{ customer.gender }}</p>
+                    <p class="field"><label for="arabic-gender">Arabic Gender:</label></p>
+                    <p class="field-value">{{ customer.arabicGender }}</p>
+                    <p class="field"><label for="service-provider">Service Provider:</label></p>
+                    <p class="field-value">{{ customer.serviceProvider }}</p>
+                    <p class="field"><label for="service-center">Service Center:</label></p>
+                    <p class="field-value">{{ customer.serviceCenter }}</p>
+                </div>
+                <div class="field-container">
+                    <p class="field"><label for="service-center-location">Service Center Location:</label></p>
+                    <p class="field-value">{{ customer.serviceCenterLocation }}</p>
+                    <p class="field"><label for="service-center-contact">Service Center Contact:</label></p>
+                    <p class="field-value">{{ customer.serviceCenterContact }}</p>
+                    <p class="field"><label for="housing-makkah-location">Housing Makkah Location:</label></p>
+                    <p class="field-value">{{ customer.housingMakkahLocation }}</p>
+                    <p class="field"><label for="housing-mina-location">Housing Mina Location:</label></p>
+                    <p class="field-value">{{ customer.housingMinaLocation }}</p>
+                    <p class="field"><label for="housing-madinah-location">Housing Madinah Location:</label></p>
+                    <p class="field-value">{{ customer.housingMadinahLocation }}</p>
+                    <p class="field"><label for="housing-arafat-location">Housing Arafat Location:</label></p>
+                    <p class="field-value">{{ customer.housingArafatLocation }}</p>
+                    <p class="field"><label for="visa-status">Visa Status:</label></p>
+                    <p class="field-value">{{ customer.visaStatus }}</p>
+                    <p class="field"><label for="dob">Date of Birth:</label></p>
+                    <p class="field-value">{{ customer.dob }}</p>
+                </div>
+            </div>
+            <div class="image-container">
+                {% if customer.picture %}
+                <img src="{{ customer.picture.url }}" alt="{{ customer.name }}" class="customer-image">
+                {% else %}
+                <img src="{% static 'images/default_image.png' %}" alt="{{ customer.name }}" class="customer-image">
+                {% endif %}
+            </div>
+            <div class="button-container">
+                <button class="edit" onclick="location.href='{% url 'edit_customer' customer.id %}'">Edit</button>
+                <button class="delete" onclick="location.href='{% url 'delete_customer' customer.id %}'">Delete</button>
+                <button class="tasreh" onclick="location.href='{% url 'tasreh_customer' customer.id %}'">Tasreh</button>
+                <button class="card" onclick="location.href='{% url 'card_customer' customer.id %}'">Card</button>
+                <button class="back" onclick="location.href='{% url 'homepage' %}'">Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

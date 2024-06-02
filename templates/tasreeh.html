@@ -1,0 +1,203 @@
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="origin-trial"
+        content="Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZyIsImV4cGlyeSI6MTcyNTQwNzk5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="preload" href="https://nusukcard.haj.gov.sa/_next/static/media/356abdd51b933898-s.p.woff2" as="font"
+        crossorigin="" type="font/woff2">
+    <link rel="preload" href="https://nusukcard.haj.gov.sa/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2" as="font"
+        crossorigin="" type="font/woff2">
+    <link rel="preload" as="image" href="https://nusukcard.haj.gov.sa/media/logo_white.png">
+    <link rel="preload" as="image" href="https://nusukcard.haj.gov.sa/media/nusuk_logo_white.png"> -->
+    <!-- style sheets -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/tasreeh-1.css' %}"
+    data-precedence="next">
+    <link rel="stylesheet" href="{% static 'css/tasreeh-1.css' %}"
+    data-precedence="next">
+    <!-- end style sheets -->
+    <!-- <link rel="preload" as="script" fetchpriority="low" nonce=""
+        href="https://nusukcard.haj.gov.sa/_next/static/chunks/webpack-ec36bc319194bb2b.js"> -->
+    <title>Hajj Card Information</title>
+    <meta name="description" content="Ministry of Hajj and Umrah">
+    <!-- <link rel="icon" href="https://nusukcard.haj.gov.sa/icon.png?557f93b9b92138f7" type="image/png" sizes="1772x1772"> -->
+    <meta name="next-size-adjust">
+    <style>
+        @media print {
+            .widget {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body class="__className_aaf875 nusuk">
+    <main>
+        <!-- <div class="load-29LTZaridSerif"></div>
+        <div class="load-29LTZaridSlab"></div>
+        <div class="load-Displace20Bold"></div>
+        <div class="load-HacenDalal"></div> -->
+
+        <div class="w-full min-h-screen">
+            <div class="flex w-full h-full min-h-screen sm:flex-col">
+                <div class="w-1/4 sm:w-full flex flex-col justify-center bg-[--color-jungle-mist] p-8 gap-4">
+                    <div class="bg-[--color-white] p-2 mx-auto">
+                        {% if user.picture %}
+                        <img class="h-40 w-auto m-auto" src="{{ user.picture.url }}">
+                        {% else %}
+                        <img class="h-40 w-auto m-auto" src="{% static 'images/default_image.png' %}">
+                        {% endif %}
+                    </div>
+                            <!-- src="https://randomuser.me/api/portraits/men/75.jpg"></div> -->
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[--color-white] flex justify-between">
+                            <div>Name (Arabic)</div>
+                            <div>الاسم (عربي)</div>
+                        </div>
+                        <div class="bg-[--color-white] font-bold text-center rounded-md p-2">{{ user.arabicName }}</div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[--color-white] flex justify-between">
+                            <div>Name (English)</div>
+                            <div>الاسم (الإنجليزية)</div>
+                        </div>
+                        <div class="bg-[--color-white] font-bold text-center rounded-md p-2">{{ user.name }}</div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[--color-white] flex justify-between">
+                            <div>Visa ID</div>
+                            <div>IDرقم التأشيرة</div>
+                        </div>
+                        <div class="bg-[--color-white] font-bold text-center rounded-md p-2">{{ user.visaId }}</div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[--color-white] flex justify-between">
+                            <div>Border Number</div>
+                            <div>رقم الحدود ( الرقم الموحد )</div>
+                        </div>
+                        <div class="bg-[--color-white] font-bold text-center rounded-md p-2">{{ user.borderNumber }}</div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[--color-white] flex justify-between">
+                            <div>Nationality</div>
+                            <div>الجنسية</div>
+                        </div>
+                        <div class="bg-[--color-white] font-bold text-center rounded-md p-2 flex justify-between">
+                            <div>{{ user.nationality }}</div>
+                            <div>{{ user.arabicNationality }}</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[--color-white] flex justify-between">
+                            <div>Gender</div>
+                            <div>جنس</div>
+                        </div>
+                        <div class="bg-[--color-white] font-bold text-center rounded-md p-2 flex justify-between">
+                            <div>{{ user.gender }}</div>
+                            <div>{{ user.arabicGender }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-3/4 sm:w-full flex flex-col bg-[url('/images/cardbackground.png')]  bg-no-repeat bg-cover p-8 gap-4">
+                    <div class="flex bg-[--color-vulcan] py-4 px-8"><img class="h-16 w-auto m-auto"
+                            src="{% static 'images/logo_white.png' %}" alt="Ministry Logo">
+                        <div class="grow text-center text-[--color-white] font-bold flex flex-col">
+                            <div> نوع الباقة-</div>
+                            <div>Package Type</div>
+                            <div>-</div>
+                        </div><img class="h-16 w-auto m-auto"
+                            src="{% static 'images/nusuk_logo_white.png' %}" alt="Nusuk Logo">
+                    </div>
+                    <div class="grow bg-[--color-white] flex flex-col py-4 px-8 gap-4 justify-center">
+                        <div class="text-xl font-bold text-center">شركة تقديم الخدمة</div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2 border-[--color-jungle-mist] border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Service Center | مركز
+                                    تقديم الخدمة
+                                    الميداني </div>
+                                <div class="text-center">{{ user.serviceCenter }}</div>
+                            </div>
+                            <div class="w-1/2 border-[--color-jungle-mist] border border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Service Provider |
+                                    مقدم الخدمة</div>
+                                <div class="text-center">{{ user.serviceProvider }}</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2 border-[--color-jungle-mist] border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Service Center
+                                    Contact | بيانات
+                                    الاتصال بمركز تقديم الخدمة الميداني</div>
+                                <div class="text-center">{{ user.serviceCenterContact }}</div>
+                            </div>
+                            <div class="w-1/2 border-[--color-jungle-mist] border border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Service Center
+                                    Location | موقع مركز
+                                    تقديم الخدمة الميداني</div>
+                                <div class="text-center">{{ user.serviceCenterLocation }}</div>
+                            </div>
+                        </div>
+                        <div class="text-xl font-bold text-center">معلومات السكن</div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2 border-[--color-jungle-mist] border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Housing Makkah
+                                    Location | موقع السكن
+                                    في مكة</div>
+                                <div class="text-center">{{ user.housingMakkahLocation }}</div>
+                            </div>
+                            <div class="w-1/2 border-[--color-jungle-mist] border border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Housing Mina Location
+                                    | موقع السكن في
+                                    منى</div>
+                                <div class="text-center">{{ user.housingMinaLocation }}</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2 border-[--color-jungle-mist] border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Housing Madinah
+                                    Location | موقع السكن
+                                    في المدينة</div>
+                                <div class="text-center">{{ user.housingMadinahLocation }}</div>
+                            </div>
+                            <div class="w-1/2 border-[--color-jungle-mist] border border p-4 rounded-md">
+                                <div class="font-bold text-[--color-jungle-mist] text-center pb-1">Housing Arafat
+                                    Location | موقع السكن
+                                    في عرفات</div>
+                                <div class="text-center">{{ user.housingArafatLocation }}</div>
+                            </div>
+                        </div>
+                        <div class="text-xl font-bold text-center">حالة التأشيرة</div>
+                        <div class="bg-[--color-jungle-mist] p-4 rounded-md">
+                            <div class="font-bold text-[--color-white] text-center pb-1">Visa Status | حالة التأشيرة
+                            </div>
+                            <div class="text-[--color-white] text-center">{{ visaStatus }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main><next-route-announcer style="position: absolute;"></next-route-announcer>
+    <div
+        style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;">
+        <div
+            style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;">
+        </div>
+        <div class="g-recaptcha-bubble-arrow"
+            style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;">
+        </div>
+        <div class="g-recaptcha-bubble-arrow"
+            style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;">
+        </div>
+        <div style="z-index: 2000000000; position: relative; width: 0px; height: 0px;"><iframe
+                title="recaptcha challenge expires in two minutes" name="c-16qq7fizt14o" frameborder="0" scrolling="no"
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                src="cid:frame-178D5848A76A9104B8AA968ED2BA8D5F@mhtml.blink" style="width: 0px; height: 0px;"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

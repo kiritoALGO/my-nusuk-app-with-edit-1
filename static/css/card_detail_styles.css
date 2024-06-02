@@ -1,0 +1,146 @@
+/* card_detail_styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field-container {
+    width: 50%; /* Two columns */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.field {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.field label {
+    font-weight: bold;
+}
+
+.field-value {
+    margin-left: 10px;
+}
+
+/* Add some spacing between fields */
+.field {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.field label {
+    font-weight: bold;
+    min-width: 200px; /* Adjust as needed */
+    margin-right: 10px; /* Add some space between label and value */
+}
+
+.field p {
+    margin: 0; /* Remove default margin for <p> */
+}
+
+/* Add some padding and border to separate fields */
+.field-value {
+    flex-grow: 1; /* Take up remaining space */
+    padding: 8px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border-radius */
+}
+
+/* Add some margin between fields */
+.details p {
+    margin-bottom: 15px;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.customer-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* Button styles */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-container button.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.button-container button.tasreh {
+    background-color: #28a745;
+    color: white;
+}
+
+.button-container button.card {
+    background-color: #ffc107;
+    color: black;
+}
+
+.button-container button.back {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button-container button:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عملائك</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>عملائك</h1>
+            <!-- Add search bar -->
+            <form action="" method="GET">
+                <input type="text" name="search" placeholder="ابحث عن العميل">
+                <button type="submit">بحث</button>
+                <a href="{% url 'add_customer' %}" class="btn-add-customer">إضافة عميل</a>
+            </form>
+            
+        </div>
+        
+        <div class="card-container">
+            {% for customer in customers %}
+            <div class="card" data-customer-id="{{ customer.id }}">
+                {% if customer.picture %}
+                    <img src="{{ customer.picture.url }}" alt="{{ customer.name }}">
+                {% else %}
+                    <!-- Provide a default image if 'picture' attribute is empty -->
+                    <img src="{% static 'images/default_image.png' %}" alt="صورة افتراضية">
+                {% endif %}
+                <h2>{{ customer.name }}</h2>
+                <h3>{{ customer.arabicName }}</h3>
+                <!-- Add more customer details here -->
+            </div>
+            {% endfor %}
+        </div>
+            
+    </div>
+
+    <!-- Include the script.js file -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
