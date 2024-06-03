@@ -97,6 +97,7 @@ def create_card(request, pk):
     # Define the text data
     if customer.picture:
         print(1111111111)
+        return f"{settings.BASE_DIR}\n /media/ \n {customer.picture.url}"
         profile_photo_path = settings.BASE_DIR +  f'/media/{customer.picture.url}'.replace('/','\\')
     else:
         print(22222222222)
