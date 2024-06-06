@@ -3,6 +3,10 @@ from .models import CustomerProfile
 
 class CustomerProfileForm(forms.ModelForm):
     class Meta:
+        dob = forms.DateField(
+            widget=forms.DateInput(format='%d/%m/%Y'),
+            input_formats=['%d/%m/%Y']
+        )
         model = CustomerProfile
         fields = [
             'name',
@@ -13,21 +17,21 @@ class CustomerProfileForm(forms.ModelForm):
             'arabicNationality',
             'gender',
             'arabicGender',
-            
+            'picture',
+            'dob',
+
             'serviceProvider',
             'serviceCenter',
             'serviceCenterLocation',
             'serviceCenterContact',
-            
+
             'housingMakkahLocation',
             'housingMinaLocation',
             'housingMadinahLocation',
             'housingArafatLocation',
-            'picture',
-            
+
             'visaStatus',
 
-            'dob',
         ]
         required_fields = [
             'name',
@@ -43,13 +47,13 @@ class CustomerProfileForm(forms.ModelForm):
             'serviceCenter',
             'serviceCenterLocation',
             'serviceCenterContact',
-            
+
             'housingMakkahLocation',
             'housingMinaLocation',
             'housingMadinahLocation',
             'housingArafatLocation',
             'picture',
-            
+
             'visaStatus',
 
             'dob',
@@ -63,22 +67,22 @@ class CustomerProfileForm(forms.ModelForm):
             'arabicNationality': 'الجنسية بالعربية',
             'gender': 'الجنس',
             'arabicGender': 'الجنس بالعربية',
-            
+
             'serviceProvider': 'مقدم الخدمة',
             'serviceCenter': 'مركز تقديم الخدمة الميداني',
             'serviceCenterLocation': 'موقع مركز تقديم الخدمة الميداني',
             'serviceCenterContact': 'بيانات الاتصال بمركز تقديم الخدمة الميداني',
-            
+
             'housingMakkahLocation': 'موقع السكن في مكة',
             'housingMinaLocation': 'موقع السكن في منى',
             'housingMadinahLocation': 'موقع السكن في المدينة',
             'housingArafatLocation': 'موقع السكن في عرفات',
             'picture': 'الصورة',
-            
+
             'visaStatus': 'حالة التأشيرة',
 
             'dob': 'تاريخ الميلاد',
-            
+
 
             # 'nationalID': 'الرقم الوطني',
             # 'gwazzID': 'رقم الجواز',
